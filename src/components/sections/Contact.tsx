@@ -33,16 +33,17 @@ const Contact: React.FC = () => {
     try {
       setFormStatus({ submitted: true, success: true, message: 'Enviando mensagem...' });
       
+      await emailjs.init('YOUR_PUBLIC_KEY'); // Inicialize o EmailJS com sua chave pública
+      
       await emailjs.send(
-        'service_id', // Substitua pelo seu Service ID do EmailJS
-        'template_id', // Substitua pelo seu Template ID do EmailJS
+        'YOUR_SERVICE_ID', // Seu Service ID do EmailJS
+        'YOUR_TEMPLATE_ID', // Seu Template ID do EmailJS
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'gabrielholandam31@gmail.com',
-        },
-        'public_key' // Substitua pela sua Public Key do EmailJS
+        }
       );
 
       setFormStatus({ submitted: true, success: true, message: 'Mensagem enviada com sucesso!' });
