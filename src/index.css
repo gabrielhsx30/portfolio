@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #172554;
+  --primary-light: #60a5fa;
+  --accent: #0d9488;
+  --bg-light: #f8fafc;
+  --bg-dark: #0f172a;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center relative;
+}
+
+.section-title::after {
+  content: "";
+  @apply block w-20 h-1 bg-teal-600 mx-auto mt-4;
+}
+
+.navbar-link {
+  @apply px-3 py-2 text-sm font-medium rounded-md transition duration-300;
+}
+
+.navbar-link:hover {
+  @apply bg-blue-50 text-blue-800 dark:bg-slate-800 dark:text-blue-400;
+}
+
+.navbar-link.active {
+  @apply bg-blue-100 text-blue-900 dark:bg-slate-700 dark:text-blue-300;
+}
+
+.skill-card {
+  @apply bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg;
+}
+
+.social-icon {
+  @apply h-6 w-6 text-slate-600 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-400 transition-colors duration-300;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800;
+}
+
+.btn-outline {
+  @apply border border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-500 dark:text-blue-400 dark:hover:bg-slate-800;
+}
